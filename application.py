@@ -1,9 +1,9 @@
 import os
 from flask import Flask
 
-appmj = Flask(__name__)
+application = Flask(__name__)
 
-@appmj.route("/aaaa")
+@application.route("/aaaa")
 def hello():
     return "<br><br><br><br><br><br><br><br><br><br><h1><marquee><b>Hello world From Mj!</b>"
 from flask import Flask,request
@@ -23,10 +23,10 @@ import sys
 from time import sleep
 
 
-appmj = Flask(__name__)
+application = Flask(__name__)
 
 
-@appmj.route('/back',methods= ['GET', 'POST'])
+@application.route('/back',methods= ['GET', 'POST'])
 # Configure the Jinja2 environment.
 def main4():
     return render_template('query.html',
@@ -34,7 +34,7 @@ def main4():
                            user='mj')
 
 
-@appmj.route('/input',methods= ['GET', 'POST'])
+@application.route('/input',methods= ['GET', 'POST'])
 # Configure the Jinja2 environment.
 def main2():
     user = {'nickname': 'Miguel'}  # fake user
@@ -42,7 +42,7 @@ def main2():
                            title='MAIN',
                            user=mj1)
 
-@appmj.route('/sign', methods= ['GET', 'POST'])
+@application.route('/sign', methods= ['GET', 'POST'])
 # Configure the Jinja2 environment.
 def main1():
     my_res=[]
@@ -103,7 +103,7 @@ def main1():
     #user = {'nickname': 'Miguel'}  # fake user
 
 
-@appmj.route('/')
+@application.route('/')
 # Configure the Jinja2 environment.
 def main3():
     user = {'nickname': 'Miguel'}  # fake user
@@ -112,11 +112,11 @@ def main3():
                            title='Home',
                            user=mj1)
 # add a rule for the index page.
-appmj.add_url_rule('/', 'index', (lambda: 'Hello From Mayank updated2'))
+application.add_url_rule('/', 'index', (lambda: 'Hello From Mayank updated2'))
 
 if __name__ == "__main__":
     #port = int(os.environ.get("port", 5001))
     #app.run(host='0.0.0.0', port=port)
     #app.debug = True
-    appmj.run()
+    application.run()
     #app.run()

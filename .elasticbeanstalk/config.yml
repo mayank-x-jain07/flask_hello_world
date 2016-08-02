@@ -1,0 +1,11 @@
+branch-defaults:
+  master:
+    environment: flask-env
+    group_suffix: null
+global:
+  application_name: flask-tutorial
+  default_ec2_keyname: mayank_uta
+  default_platform: python2.7
+  default_region: us-west-2
+  profile: eb-cli
+  sc: git
